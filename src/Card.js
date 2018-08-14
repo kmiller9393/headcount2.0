@@ -9,7 +9,7 @@ const Card = ({ stats, location }) => {
       {Object.keys(stats).map(stat => {
         return (
           <article>
-            <ul>
+            <ul className={stats[stat] < 0.5 ? 'low-data' : 'high-data'}>
               {stat}: {stats[stat]}
             </ul>
           </article>

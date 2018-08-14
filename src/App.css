@@ -1,7 +1,8 @@
 .App {
+  background-color: #1a6e80;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-auto-rows: minmax(16.5rem, auto);
+  grid-auto-rows: minmax(20rem, auto);
 }
 
 /* .App {
