@@ -3,6 +3,7 @@ import Card from './Card';
 import PropTypes from 'prop-types';
 
 const CardContainer = ({ districts }) => {
+  console.log(districts);
   const displayDistrictData = Object.keys(districts.stats).map(
     (district, index) => {
       return (
