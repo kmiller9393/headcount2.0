@@ -4,15 +4,21 @@ import DistrictRepository from './helper';
 import CardContainer from './CardContainer';
 import kinderdata from './data/kindergartners_in_full_day_program';
 import './App.css';
-const districts = new DistrictRepository(kinderdata);
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      districts
+      districts: new DistrictRepository(kinderdata),
+      filteredDistricts: []
     };
   }
+
+  filterDistricts = input => {
+    this.setState({
+      filteredDistricts: this.state.districts.findAllMatches(input)
+    });
+  };
 
   // handleInput = input => {
   //   this.setState({
@@ -23,12 +29,19 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Search
-          districts={this.state.districts}
-          handleInput={this.handleInput}
-        />
+        <header>
+          <h1>Kindergartners In Full Day Program</h1>
+          <Search
+            districts={this.state.districts}
+            handleInput={this.handleInput}
+            filterDistricts={this.filterDistricts}
+          />
+        </header>
         <div className="App">
-          <CardContainer districts={this.state.districts} />
+          <CardContainer
+            districts={this.state.districts}
+            filteredDistricts={this.state.filteredDistricts}
+          />
         </div>
       </div>
     );
