@@ -10,7 +10,8 @@ class App extends Component {
     super();
     this.state = {
       districts: new DistrictRepository(kinderdata),
-      filteredDistricts: []
+      filteredDistricts: [],
+      compareDistricts: []
     };
   }
 
@@ -20,11 +21,11 @@ class App extends Component {
     });
   };
 
-  // handleInput = input => {
-  //   this.setState({
-  //     districts:
-  //   });
-  // };
+  chooseCard = location => {
+    const selected = this.state.districts.findByName(location)
+    const clickedCards = [...this.state.compareDistricts, selected]
+    this.setState({ compareDistricts: clickedCards })
+  }
 
   render() {
     return (
@@ -33,14 +34,15 @@ class App extends Component {
           <h1>Kindergartners In Full Day Program</h1>
           <Search
             districts={this.state.districts}
-            handleInput={this.handleInput}
             filterDistricts={this.filterDistricts}
           />
         </header>
-        <div className="App">
+        <div>
           <CardContainer
             districts={this.state.districts}
             filteredDistricts={this.state.filteredDistricts}
+            chooseCard={this.chooseCard}
+            compareDistricts={this.state.compareDistricts}
           />
         </div>
       </div>

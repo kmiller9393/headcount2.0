@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Search extends Component {
   handleChange = e => {
@@ -12,4 +13,8 @@ export default class Search extends Component {
       </form>
     );
   }
+}
+
+Search.propTypes = {
+  filterDistricts: PropTypes.func
 }

@@ -1,18 +1,30 @@
 import React from 'react';
 import Card from './Card';
 import PropTypes from 'prop-types';
+import './App.css'
 
-const CardContainer = ({ districts, filteredDistricts }) => {
+const CardContainer = ({ districts, filteredDistricts, chooseCard, compareDistricts }) => {
   const newCard = filteredDistricts.map((district, index) => {
-    console.log(filteredDistricts);
     return (
       <Card
         location={district}
         stats={districts.stats[district].stats}
         key={index}
+        chooseCard={chooseCard}
       />
     );
   });
+
+  const selectedDistricts = compareDistricts.map((district, index) => {
+    return (
+      <Card
+        location={district.location}
+        stats={district.stats}
+        key={index}
+        chooseCard={chooseCard}
+      />
+    )
+  })
 
   const displayDistrictData = Object.keys(districts.stats).map(
     (district, index) => {
@@ -21,16 +33,23 @@ const CardContainer = ({ districts, filteredDistricts }) => {
           location={district}
           stats={districts.stats[district].stats}
           key={index}
+          chooseCard={chooseCard}
         />
       );
     }
   );
 
   if (filteredDistricts.length) {
-    return <div>{newCard}</div>;
+    return <div className="App">{newCard}</div>;
   }
-
-  return <React.Fragment>{displayDistrictData}</React.Fragment>;
+  return (
+    <div className="App">
+      <div className="Chosen">
+        {selectedDistricts}
+      </div>
+      {displayDistrictData}
+    </div>
+  );
 };
 
 CardContainer.propTypes = {
