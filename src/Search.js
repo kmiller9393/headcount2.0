@@ -17,4 +17,4 @@ export default class Search extends Component {
 
 Search.propTypes = {
   filterDistricts: PropTypes.func
-}
+};

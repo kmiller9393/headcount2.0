@@ -1,7 +1,8 @@
 import React from 'react';
 import Card from './Card';
 import PropTypes from 'prop-types';
-import './App.css'
+import './App.css';
+import './Card.css';
 
 const CardContainer = ({ districts, filteredDistricts, chooseCard, compareDistricts }) => {
   const newCard = filteredDistricts.map((district, index) => {
@@ -43,12 +44,14 @@ const CardContainer = ({ districts, filteredDistricts, chooseCard, compareDistri
     return <div className="App">{newCard}</div>;
   }
   return (
-    <div className="App">
-      <div className="Chosen">
+    <React.Fragment>
+      <div className="Selected">
         {selectedDistricts}
       </div>
-      {displayDistrictData}
-    </div>
+      <div className="App">
+        {displayDistrictData}
+      </div>
+    </React.Fragment>
   );
 };
 

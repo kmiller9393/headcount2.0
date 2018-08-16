@@ -22,10 +22,10 @@ class App extends Component {
   };
 
   chooseCard = location => {
-    const selected = this.state.districts.findByName(location)
-    const clickedCards = [...this.state.compareDistricts, selected]
-    this.setState({ compareDistricts: clickedCards })
-  }
+    const selected = this.state.districts.findByName(location);
+    const clickedCards = [...this.state.compareDistricts, selected];
+    this.setState({ compareDistricts: clickedCards });
+  };
 
   render() {
     return (
