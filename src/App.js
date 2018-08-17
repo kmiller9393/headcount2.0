@@ -46,10 +46,7 @@ class App extends Component {
       <div>
         <header>
           <h1>Kindergartners In Full Day Program</h1>
-          <Search
-            districts={this.state.districts}
-            filterDistricts={this.filterDistricts}
-          />
+          <Search filterDistricts={this.filterDistricts} />
         </header>
         <div>
           <CardContainer

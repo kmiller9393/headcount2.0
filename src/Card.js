@@ -51,5 +51,8 @@ export default class Card extends Component {
 
 Card.propTypes = {
   stats: PropTypes.object,
-  location: PropTypes.string
+  location: PropTypes.string,
+  chooseCard: PropTypes.func,
+  compareCards: PropTypes.func,
+  compareDistricts: PropTypes.array
 };

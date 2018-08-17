@@ -1,5 +1,4 @@
 .App {
-  background-color: #1a6e80;
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -10,12 +9,16 @@
   border: 3px solid magenta;
 }
 
+body {
+  background-color: #080d0c;
+}
+
 h1 {
+  color: #f7f7f7;
   margin-top: 0;
 }
 
 header {
-  background-color: #1a6e80;
   text-align: center;
 }
 

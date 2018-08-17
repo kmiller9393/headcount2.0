@@ -10,7 +10,6 @@
 }
 
 .Selected {
-  background-color: #1a6e80;
   display: flex;
   justify-content: space-evenly;
 }

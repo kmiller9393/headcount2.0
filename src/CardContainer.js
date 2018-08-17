@@ -83,7 +83,12 @@ const CardContainer = ({
 };
 
 CardContainer.propTypes = {
-  districts: PropTypes.object
+  districts: PropTypes.object,
+  filteredDistricts: PropTypes.array,
+  chooseCard: PropTypes.func,
+  compareDistricts: PropTypes.array,
+  compareCards: PropTypes.func,
+  comparedAverages: PropTypes.object
 };
 
 export default CardContainer;

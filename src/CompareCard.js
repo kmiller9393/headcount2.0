@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const CompareCard = ({
   DistrictOne,
@@ -10,7 +11,7 @@ const CompareCard = ({
   return (
     <div className="Card">
       <h2>
-        {DistrictOne} : {DistrictOneData}
+        {DistrictOne}: {DistrictOneData}
       </h2>
       <h2>{comparison}</h2>
       <h2>
@@ -18,6 +19,14 @@ const CompareCard = ({
       </h2>
     </div>
   );
+};
+
+CompareCard.propTypes = {
+  DistrictOne: PropTypes.string,
+  DistrictOneData: PropTypes.number,
+  comparison: PropTypes.number,
+  DistrictTwo: PropTypes.string,
+  DistrictTwoData: PropTypes.number
 };
 
 export default CompareCard;
