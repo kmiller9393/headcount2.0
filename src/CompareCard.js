@@ -1,11 +1,11 @@
 import React from 'react';
 
-const CompareCard = ({ comparedAverages }) => {
+const CompareCard = ({ firstDistrict, comparison, secondDistrict }) => {
   return (
-    <div>
-      <h2>School Title</h2>
-      <h2>{comparedAverages.compared}</h2>
-      <h2>Second School Title</h2>
+    <div className="Compare">
+      <h2>{firstDistrict}</h2>
+      <h2>{comparison}</h2>
+      <h2>{secondDistrict}</h2>
     </div>
   );
 };
