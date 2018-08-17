@@ -1,10 +1,18 @@
 import React from 'react';
 import Card from './Card';
+import CompareCard from './CompareCard';
 import PropTypes from 'prop-types';
 import './App.css';
 import './Card.css';
 
-const CardContainer = ({ districts, filteredDistricts, chooseCard, compareDistricts }) => {
+const CardContainer = ({
+  districts,
+  filteredDistricts,
+  chooseCard,
+  compareDistricts,
+  compareCards,
+  comparedAverages
+}) => {
   const newCard = filteredDistricts.map((district, index) => {
     return (
       <Card
@@ -12,6 +20,7 @@ const CardContainer = ({ districts, filteredDistricts, chooseCard, compareDistri
         stats={districts.stats[district].stats}
         key={index}
         chooseCard={chooseCard}
+        compareCards={compareCards}
       />
     );
   });
@@ -23,9 +32,11 @@ const CardContainer = ({ districts, filteredDistricts, chooseCard, compareDistri
         stats={district.stats}
         key={index}
         chooseCard={chooseCard}
+        compareDistricts
+        compareCards={compareCards}
       />
-    )
-  })
+    );
+  });
 
   const displayDistrictData = Object.keys(districts.stats).map(
     (district, index) => {
@@ -35,6 +46,7 @@ const CardContainer = ({ districts, filteredDistricts, chooseCard, compareDistri
           stats={districts.stats[district].stats}
           key={index}
           chooseCard={chooseCard}
+          compareCards={compareCards}
         />
       );
     }
@@ -47,10 +59,11 @@ const CardContainer = ({ districts, filteredDistricts, chooseCard, compareDistri
     <React.Fragment>
       <div className="Selected">
         {selectedDistricts}
+        {compareDistricts.length > 1 && (
+          <CompareCard comparedAverages={comparedAverages} />
+        )}
       </div>
-      <div className="App">
-        {displayDistrictData}
-      </div>
+      <div className="App">{displayDistrictData}</div>
     </React.Fragment>
   );
 };

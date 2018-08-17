@@ -17,13 +17,17 @@ export default class Card extends Component {
       selected: !selectStatus
     });
     this.props.chooseCard(this.props.location);
+    this.props.compareCards();
   };
 
   render() {
     return (
       <div
-        // className={this.state.selected ? 'Chosen' : 'Card'}
-        className="Card"
+        className={
+          this.props.compareDistricts || this.state.selected
+            ? 'Chosen Card'
+            : 'Card'
+        }
         onClick={this.handleClick}
       >
         <h2>{this.props.location}</h2>

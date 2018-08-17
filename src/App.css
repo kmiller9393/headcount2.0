@@ -6,10 +6,14 @@
   justify-content: center;
 }
 
+.Chosen {
+  border: 3px solid magenta;
+}
+
 .Selected {
   background-color: #1a6e80;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 h1 {

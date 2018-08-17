@@ -11,7 +11,8 @@ class App extends Component {
     this.state = {
       districts: new DistrictRepository(kinderdata),
       filteredDistricts: [],
-      compareDistricts: []
+      compareDistricts: [],
+      comparedAverages: {}
     };
   }
 
@@ -21,7 +22,20 @@ class App extends Component {
     });
   };
 
+  compareCards = () => {
+    if (this.state.compareDistricts.length > 1) {
+      const compared = this.state.districts.compareDistrictAverages(
+        this.state.compareDistricts[0].location,
+        this.state.compareDistricts[1].location
+      );
+      this.setState({ comparedAverages: compared });
+    }
+  };
+
   chooseCard = location => {
+    if (this.state.compareDistricts.length === 2) {
+      return;
+    }
     const selected = this.state.districts.findByName(location);
     const clickedCards = [...this.state.compareDistricts, selected];
     this.setState({ compareDistricts: clickedCards });
@@ -43,6 +57,8 @@ class App extends Component {
             filteredDistricts={this.state.filteredDistricts}
             chooseCard={this.chooseCard}
             compareDistricts={this.state.compareDistricts}
+            compareCards={this.compareCards}
+            comparedAverages={this.state.comparedAverages}
           />
         </div>
       </div>
