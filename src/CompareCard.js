@@ -1,11 +1,21 @@
 import React from 'react';
 
-const CompareCard = ({ firstDistrict, comparison, secondDistrict }) => {
+const CompareCard = ({
+  DistrictOne,
+  DistrictOneData,
+  comparison,
+  DistrictTwo,
+  DistrictTwoData
+}) => {
   return (
-    <div className="Compare">
-      <h2>{firstDistrict}</h2>
+    <div className="Card">
+      <h2>
+        {DistrictOne} : {DistrictOneData}
+      </h2>
       <h2>{comparison}</h2>
-      <h2>{secondDistrict}</h2>
+      <h2>
+        {DistrictTwo}: {DistrictTwoData}
+      </h2>
     </div>
   );
 };

@@ -39,11 +39,14 @@ const CardContainer = ({
   });
 
   const data = Object.values(comparedAverages);
+  const dataKeys = Object.keys(comparedAverages);
   const comparedData = (
     <CompareCard
-      firstDistrict={data[0]}
+      DistrictOne={dataKeys[0]}
+      DistrictOneData={data[0]}
       comparison={data[2]}
-      secondDistrict={data[1]}
+      DistrictTwo={dataKeys[1]}
+      DistrictTwoData={data[1]}
     />
   );
 
@@ -67,8 +70,12 @@ const CardContainer = ({
   return (
     <React.Fragment>
       <div className="Selected">
-        {selectedDistricts}
+        {selectedDistricts[0]}
         {compareDistricts.length > 1 && comparedData}
+        {selectedDistricts[1]}
+        {/* {compareDistricts.length > 1 && (
+          <CompareCard comparedAverages={comparedAverages} />
+        )} */}
       </div>
       <div className="App">{displayDistrictData}</div>
     </React.Fragment>

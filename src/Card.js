@@ -17,7 +17,7 @@ export default class Card extends Component {
       selected: !selectStatus
     });
     this.props.chooseCard(this.props.location);
-    this.props.compareCards();
+    this.props.compareCards(this.props.location);
   };
 
   render() {

@@ -22,18 +22,18 @@ class App extends Component {
     });
   };
 
-  compareCards = () => {
-    if (this.state.compareDistricts.length > 1) {
+  compareCards = location => {
+    if (this.state.compareDistricts.length === 1) {
       const compared = this.state.districts.compareDistrictAverages(
         this.state.compareDistricts[0].location,
-        this.state.compareDistricts[1].location
+        location
       );
       this.setState({ comparedAverages: compared });
     }
   };
 
   chooseCard = location => {
-    if (this.state.compareDistricts.length === 2) {
+    if (this.state.compareDistricts.length > 1) {
       return;
     }
     const selected = this.state.districts.findByName(location);
