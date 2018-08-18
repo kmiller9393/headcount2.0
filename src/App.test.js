@@ -1,36 +1,37 @@
 import React from 'react';
+import kinderdata from './data/kindergartners_in_full_day_program';
+import DistrictRepository from './helper';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { shallow, mount } from 'enzyme';
 
 describe('App', () => {
-  let addIdeaMock;
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<App addIdea={addIdeaMock} />);
+    wrapper = shallow(<App />);
   });
 
   it('matches the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders a Search component with the correct props', () => {
+  it('should have initial state that is composed of two empty arrays, an object and a twoCards property set to false', () => {
     wrapper = mount(<App />);
     const expected = {
-      filterDistricts: wrapper.instance().filterDistricts
-    };
-    expect(wrapper.find('Search').props()).toEqual(expected);
-  });
-
-  it('should have initial state that with one object with data, one empty object and two empty arrays', () => {
-    const expected = {
-      districts: {},
       filteredDistricts: [],
       compareDistricts: [],
-      comparedAverages: {}
+      comparedAverages: {},
+      twoCards: false
     };
-    const wrapper = mount(<App />);
     expect(wrapper.state()).toEqual(expected);
   });
+
+  it('filterDistricts should filter out districts and update the state', () => {
+    const expected = 'col';
+    wrapper.instance().filterDistricts(expected);
+    expect(wrapper.state('filteredDistricts')).toHaveLength(2);
+  });
+
+  // it('compareCards should add a card to the compareDistricts array', () => {});
 });

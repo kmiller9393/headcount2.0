@@ -9,36 +9,57 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      districts: new DistrictRepository(kinderdata),
       filteredDistricts: [],
       compareDistricts: [],
-      comparedAverages: {}
+      comparedAverages: {},
+      twoCards: false
     };
   }
 
   filterDistricts = input => {
+    const districts = new DistrictRepository(kinderdata);
+    const newDistricts = districts.findAllMatches(input);
     this.setState({
-      filteredDistricts: this.state.districts.findAllMatches(input)
+      filteredDistricts: newDistricts
     });
   };
 
-  compareCards = location => {
-    if (this.state.compareDistricts.length === 1) {
-      const compared = this.state.districts.compareDistrictAverages(
-        this.state.compareDistricts[0].location,
-        location
-      );
-      this.setState({ comparedAverages: compared });
-    }
-  };
-
-  chooseCard = location => {
+  chooseCard = card => {
     if (this.state.compareDistricts.length > 1) {
       return;
     }
-    const selected = this.state.districts.findByName(location);
-    const clickedCards = [...this.state.compareDistricts, selected];
+    const clickedCards = [...this.state.compareDistricts, card];
     this.setState({ compareDistricts: clickedCards });
+  };
+
+  compareCards = () => {
+    const districts = new DistrictRepository(kinderdata);
+    const locations = this.state.compareDistricts.map(
+      district => district.location
+    );
+    const compared = districts.compareDistrictAverages(
+      locations[0],
+      locations[1]
+    );
+    this.setState({ comparedAverages: compared, twoCards: true });
+  };
+
+  componentDidUpdate = () => {
+    if (this.state.compareDistricts.length === 2 && !this.state.twoCards) {
+      this.compareCards();
+    }
+  };
+
+  componentDidMount = () => {
+    this.populateContainer();
+  };
+
+  populateContainer = () => {
+    const districts = new DistrictRepository(kinderdata);
+    const newDistricts = districts.findAllMatches();
+    this.setState({
+      filteredDistricts: newDistricts
+    });
   };
 
   render() {

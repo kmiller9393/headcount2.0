@@ -25,14 +25,17 @@ export default class DistrictRepository {
 
   findAllMatches = name => {
     const districtData = Object.keys(this.stats);
+    let districtMatches = [];
     if (!name) {
-      return districtData;
+      districtMatches = districtData.map(district => this.stats[district]);
+      return districtMatches;
     }
     name = name.toUpperCase();
     const filteredData = districtData.filter(district =>
       district.includes(name)
     );
-    return filteredData;
+    const filteredObj = filteredData.map(data => this.stats[data]);
+    return filteredObj;
   };
 
   findAverage = name => {
@@ -52,9 +55,10 @@ export default class DistrictRepository {
     const compareObject = {
       [firstName]: firstAverage,
       [secondName]: secondAverage,
-      'compared': (firstAverage < secondAverage)
-        ? (Math.round(firstAverage / secondAverage * 1000) / 1000)
-        : (Math.round(secondAverage / firstAverage * 1000) / 1000)
+      compared:
+        firstAverage < secondAverage
+          ? Math.round((firstAverage / secondAverage) * 1000) / 1000
+          : Math.round((secondAverage / firstAverage) * 1000) / 1000
     };
     return compareObject;
   };
