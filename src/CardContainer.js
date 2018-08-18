@@ -10,7 +10,8 @@ const CardContainer = ({
   chooseCard,
   compareDistricts,
   compareCards,
-  comparedAverages
+  comparedAverages,
+  removeCard
 }) => {
   const newCard = filteredDistricts.map((district, index) => {
     return (
@@ -20,6 +21,7 @@ const CardContainer = ({
         key={index}
         chooseCard={chooseCard}
         compareCards={compareCards}
+        removeCard={removeCard}
       />
     );
   });
@@ -31,8 +33,10 @@ const CardContainer = ({
         stats={district.stats}
         key={index}
         chooseCard={chooseCard}
-        compareDistricts
         compareCards={compareCards}
+        compareDistricts
+        selected
+        removeCard={removeCard}
       />
     );
   });

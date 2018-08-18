@@ -16,6 +16,10 @@ export default class Card extends Component {
     this.setState({
       selected: !selectStatus
     });
+    this.props.removeCard(this.props.location);
+    if (this.props.selected) {
+      return;
+    }
     this.props.chooseCard(this.props);
   };
 

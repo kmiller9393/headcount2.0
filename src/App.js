@@ -50,6 +50,15 @@ class App extends Component {
     }
   };
 
+  removeCard = location => {
+    if (this.state.compareDistricts.length >= 1) {
+      const removeLocations = this.state.compareDistricts.filter(
+        district => district.location !== location
+      );
+      this.setState({ compareDistricts: removeLocations, twoCards: false });
+    }
+  };
+
   componentDidMount = () => {
     this.populateContainer();
   };
@@ -77,6 +86,7 @@ class App extends Component {
             compareDistricts={this.state.compareDistricts}
             compareCards={this.compareCards}
             comparedAverages={this.state.comparedAverages}
+            removeCard={this.removeCard}
           />
         </div>
       </div>
