@@ -28,6 +28,90 @@ describe('App', () => {
 
   it('chooseCard should add a card to the compareDistricts array', () => {
     const wrapper = shallow(<App />);
-    const expected = {};
+    const expected = {
+      location: 'ADAMS COUNTY 14',
+      stats: {
+        2004: 0.228,
+        2005: 0.3,
+        2006: 0.293,
+        2007: 0.306,
+        2008: 0.673
+      }
+    };
+    wrapper.instance().chooseCard(expected);
+    expect(wrapper.state('compareDistricts')).toHaveLength(1);
   });
+
+  // it('chooseCard should not change the state when there is more than one card in the compareDistricts array', () => {
+  //   const wrapper = shallow(<App />);
+  //   const expected = [{
+  //     location: 'ADAMS COUNTY 14',
+  //     stats: {
+  //       2004: 0.228,
+  //       2005: 0.3,
+  //       2006: 0.293,
+  //       2007: 0.306,
+  //       2008: 0.673
+  //     },
+  //     location: 'COLORADO',
+  //     stats: {
+  //       2004: 0.24,
+  //       2005: 0.278,
+  //       2006: 0.337,
+  //       2007: 0.395,
+  //       2008: 0.536
+  //     }
+  //   }];
+  //   wrapper.instance().chooseCard(expected);
+  //   expect(wrapper.state('compareDistricts')).toEqual(expected);
+  // });
+
+  it('compareCards should add three properties to the comparedAverages object and add two objects to the comparedDistricts array', () => {
+    const wrapper = shallow(<App />);
+    const state = [
+      {
+        location: 'COLORADO',
+        stats:
+          { '2004': 0.24 }
+      },
+      {
+        location: 'COLORADO SPRINGS 11',
+        stats:
+          { '2004': 0.069 }
+      }]
+    const expected = {
+      'COLORADO': 0.53,
+      'COLORADO SPRINGS 11': 0.833,
+      'compared': 0.636
+    };
+    wrapper.setState({ compareDistricts: state })
+    wrapper.instance().compareCards();
+    expect(wrapper.state('comparedAverages')).toEqual(expected);
+  });
+
+  it('removeCard should remove a card from the comparedDistricts array', () => {
+    const wrapper = shallow(<App />);
+    const district = 'COLORADO';
+    const expected = [
+      {
+        location: 'COLORADO',
+        stats:
+          { '2004': 0.24 }
+      },
+      {
+        location: 'COLORADO SPRINGS 11',
+        stats:
+          { '2004': 0.069 }
+      }]
+    wrapper.setState({ compareDistricts: expected });
+    expect(wrapper.state('compareDistricts')).toHaveLength(2);
+    wrapper.instance().removeCard(district);
+    expect(wrapper.state('compareDistricts')).toHaveLength(1);
+  });
+
+  it('populateContainer should populate the filteredDistricts and its length should be 181', () => {
+    const wrapper = shallow(<App />);
+    wrapper.instance().populateContainer();
+    expect(wrapper.state('filteredDistricts')).toHaveLength(181);
+  })
 });

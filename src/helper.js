@@ -35,6 +35,7 @@ export default class DistrictRepository {
       district.includes(name)
     );
     const filteredObj = filteredData.map(data => this.stats[data]);
+    console.log(filteredObj)
     return filteredObj;
   };
 

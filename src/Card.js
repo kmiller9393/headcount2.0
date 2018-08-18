@@ -57,5 +57,7 @@ Card.propTypes = {
   location: PropTypes.string,
   chooseCard: PropTypes.func,
   compareCards: PropTypes.func,
-  compareDistricts: PropTypes.array
+  compareDistricts: PropTypes.array,
+  removeCard: PropTypes.func,
+  selected: PropTypes.bool
 };

@@ -70,7 +70,8 @@ CardContainer.propTypes = {
   chooseCard: PropTypes.func,
   compareDistricts: PropTypes.array,
   compareCards: PropTypes.func,
-  comparedAverages: PropTypes.object
+  comparedAverages: PropTypes.object,
+  removeCard: PropTypes.func
 };
 
 export default CardContainer;
