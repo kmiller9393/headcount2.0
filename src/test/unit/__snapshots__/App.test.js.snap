@@ -19,7 +19,7 @@ ShallowWrapper {
       "children": Array [
         <header>
           <h1>
-                    Kindergartners In Full Day Program
+                    HeadCount 2.0
           </h1>
           <Search
                     filterDistricts={[Function]}
@@ -31,7 +31,6 @@ ShallowWrapper {
                     compareCards={[Function]}
                     compareDistricts={Array []}
                     comparedAverages={Object {}}
-                    districts={undefined}
                     filteredDistricts={
                               Array [
                                         Object {
@@ -2946,7 +2945,7 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <h1>
-              Kindergartners In Full Day Program
+              HeadCount 2.0
 </h1>,
             <Search
               filterDistricts={[Function]}
@@ -2960,10 +2959,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Kindergartners In Full Day Program",
+              "children": "HeadCount 2.0",
             },
             "ref": null,
-            "rendered": "Kindergartners In Full Day Program",
+            "rendered": "HeadCount 2.0",
             "type": "h1",
           },
           Object {
@@ -2990,7 +2989,6 @@ ShallowWrapper {
             compareCards={[Function]}
             compareDistricts={Array []}
             comparedAverages={Object {}}
-            districts={undefined}
             filteredDistricts={
                         Array [
                                     Object {
@@ -5904,7 +5902,6 @@ ShallowWrapper {
             "compareCards": [Function],
             "compareDistricts": Array [],
             "comparedAverages": Object {},
-            "districts": undefined,
             "filteredDistricts": Array [
               Object {
                 "location": "COLORADO",
@@ -8823,7 +8820,7 @@ ShallowWrapper {
         "children": Array [
           <header>
             <h1>
-                        Kindergartners In Full Day Program
+                        HeadCount 2.0
             </h1>
             <Search
                         filterDistricts={[Function]}
@@ -8835,7 +8832,6 @@ ShallowWrapper {
                         compareCards={[Function]}
                         compareDistricts={Array []}
                         comparedAverages={Object {}}
-                        districts={undefined}
                         filteredDistricts={
                                     Array [
                                                 Object {
@@ -11750,7 +11746,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <h1>
-                Kindergartners In Full Day Program
+                HeadCount 2.0
 </h1>,
               <Search
                 filterDistricts={[Function]}
@@ -11764,10 +11760,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Kindergartners In Full Day Program",
+                "children": "HeadCount 2.0",
               },
               "ref": null,
-              "rendered": "Kindergartners In Full Day Program",
+              "rendered": "HeadCount 2.0",
               "type": "h1",
             },
             Object {
@@ -11794,7 +11790,6 @@ ShallowWrapper {
               compareCards={[Function]}
               compareDistricts={Array []}
               comparedAverages={Object {}}
-              districts={undefined}
               filteredDistricts={
                             Array [
                                           Object {
@@ -14708,7 +14703,6 @@ ShallowWrapper {
               "compareCards": [Function],
               "compareDistricts": Array [],
               "comparedAverages": Object {},
-              "districts": undefined,
               "filteredDistricts": Array [
                 Object {
                   "location": "COLORADO",

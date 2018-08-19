@@ -1,6 +1,6 @@
 import React from 'react';
 import App from '../../App';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 describe('App', () => {
   it('matches the snapshot', () => {
@@ -8,7 +8,7 @@ describe('App', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should have initial state that is composed of two empty arrays, an object and a twoCards property set to false', () => {
+  it('should have initial state', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.state('filteredDistricts')).toHaveLength(181);
     expect(wrapper.state('compareDistricts')).toEqual([]);
@@ -38,30 +38,6 @@ describe('App', () => {
     wrapper.instance().chooseCard(expected);
     expect(wrapper.state('compareDistricts')).toHaveLength(1);
   });
-
-  // it('chooseCard should not change the state when there is more than one card in the compareDistricts array', () => {
-  //   const wrapper = shallow(<App />);
-  //   const expected = {
-  //     location: 'ADAMS COUNTY 14',
-  //     stats: {
-  //       2004: 0.228,
-  //       2005: 0.3,
-  //       2006: 0.293,
-  //       2007: 0.306,
-  //       2008: 0.673
-  //     },
-  //     location: 'COLORADO',
-  //     stats: {
-  //       2004: 0.24,
-  //       2005: 0.278,
-  //       2006: 0.337,
-  //       2007: 0.395,
-  //       2008: 0.536
-  //     }
-  //   };
-  //   wrapper.instance().chooseCard(expected);
-  //   expect(wrapper.state('compareDistricts')).toEqual(expected);
-  // });
 
   it('compareCards should add three properties to the comparedAverages object and add two objects to the comparedDistricts array', () => {
     const wrapper = shallow(<App />);

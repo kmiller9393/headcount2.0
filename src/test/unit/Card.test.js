@@ -34,6 +34,17 @@ describe('Card', () => {
   });
 
   it('the handleClick changes the state of the card when clicked', () => {
+    wrapper = shallow(
+      <Card
+        location="COLORADO"
+        stats={{ 2004: 0.24 }}
+        key={key}
+        compareDistricts={compareDistricts}
+        chooseCard={chooseCardMock}
+        compareCards={compareCardsMock}
+        removeCard={removeCardMock}
+      />
+    );
     expect(wrapper.state('selected')).toEqual(false);
     wrapper.instance().handleClick();
     expect(wrapper.state('selected')).toEqual(true);

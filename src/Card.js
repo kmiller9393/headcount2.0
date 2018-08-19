@@ -34,9 +34,9 @@ export default class Card extends Component {
         onClick={this.handleClick}
       >
         <h2>{this.props.location}</h2>
-        {Object.keys(this.props.stats).map(stat => {
+        {Object.keys(this.props.stats).map((stat, index) => {
           return (
-            <article>
+            <article key={index}>
               <ul
                 className={
                   this.props.stats[stat] < 0.5 ? 'low-data' : 'high-data'

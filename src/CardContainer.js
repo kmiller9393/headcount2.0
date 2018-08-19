@@ -34,30 +34,26 @@ const CardContainer = ({
         key={index}
         chooseCard={chooseCard}
         compareCards={compareCards}
-        compareDistricts
+        compareDistricts={compareDistricts}
         selected
         removeCard={removeCard}
       />
     );
   });
 
-  const data = Object.values(comparedAverages);
-  const dataKeys = Object.keys(comparedAverages);
-  const comparedData = (
-    <CompareCard
-      DistrictOne={dataKeys[0]}
-      DistrictOneData={data[0]}
-      comparison={data[2]}
-      DistrictTwo={dataKeys[1]}
-      DistrictTwoData={data[1]}
-    />
-  );
-
   return (
     <React.Fragment>
       <div className="Selected">
         {selectedDistricts[0]}
-        {compareDistricts.length > 1 && comparedData}
+        {compareDistricts.length > 1 && (
+          <CompareCard
+            DistrictOne={Object.keys(comparedAverages)[0]}
+            DistrictOneData={Object.values(comparedAverages)[0]}
+            comparison={Object.values(comparedAverages)[2]}
+            DistrictTwo={Object.keys(comparedAverages)[1]}
+            DistrictTwoData={Object.values(comparedAverages)[1]}
+          />
+        )}
         {selectedDistricts[1]}
       </div>
       <div className="App">{newCard}</div>

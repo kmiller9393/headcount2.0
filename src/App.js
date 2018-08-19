@@ -80,7 +80,6 @@ class App extends Component {
         </header>
         <div>
           <CardContainer
-            districts={this.state.districts}
             filteredDistricts={this.state.filteredDistricts}
             chooseCard={this.chooseCard}
             compareDistricts={this.state.compareDistricts}

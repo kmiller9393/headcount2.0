@@ -1,6 +1,7 @@
 import React from 'react';
 import CardContainer from '../../CardContainer';
-import { shallow, mount } from 'enzyme';
+import Card from '../../Card';
+import { shallow } from 'enzyme';
 
 describe('CardContainer', () => {
   let wrapper;
@@ -10,6 +11,7 @@ describe('CardContainer', () => {
   let filteredDistricts = [];
   let compareDistricts = [];
   let comparedAverages = {};
+
   beforeEach(() => {
     removeCardMock = jest.fn();
     chooseCardMock = jest.fn();
@@ -25,7 +27,29 @@ describe('CardContainer', () => {
       />
     );
   });
+
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render the districts and district data', () => {
+    const card = [
+      {
+        location: 'COLORADO',
+        stats: {
+          2004: 0.24
+        },
+        location: 'ACADEMY 20',
+        stats: {
+          2004: 0.302
+        }
+      }
+    ];
+    wrapper = shallow(
+      <CardContainer filteredDistricts={card} compareDistricts={card} />
+    );
+
+    const expected = wrapper.find(Card).length;
+    expect(expected).toEqual(2);
   });
 });
