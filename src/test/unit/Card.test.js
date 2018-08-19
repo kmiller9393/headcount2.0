@@ -8,7 +8,7 @@ describe('Card', () => {
   let key;
   let chooseCardMock;
   let removeCardMock;
-  let compareDistrictsArray = [];
+  let compareDistricts = [];
 
   beforeEach(() => {
     key = 1;
@@ -21,7 +21,7 @@ describe('Card', () => {
         stats={{ 2004: 0.24 }}
         key={key}
         selected
-        compareDistricts={compareDistrictsArray}
+        compareDistricts={compareDistricts}
         chooseCard={chooseCardMock}
         compareCards={compareCardsMock}
         removeCard={removeCardMock}
@@ -51,7 +51,7 @@ describe('Card', () => {
         location="COLORADO"
         stats={{ 2004: 0.24 }}
         key={key}
-        compareDistricts={compareDistrictsArray}
+        compareDistricts={compareDistricts}
         chooseCard={chooseCardMock}
         compareCards={compareCardsMock}
         removeCard={removeCardMock}

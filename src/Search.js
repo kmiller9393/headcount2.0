@@ -2,15 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Search = ({ filterDistricts }) => {
-  this.handleChange = e => {
-    filterDistricts(e.target.value);
+  const handleChange = event => {
+    filterDistricts(event.target.value);
   };
 
-  return (
-    <form>
-      <input type="text" placeholder="Search" onChange={this.handleChange} />
-    </form>
-  );
+  return <input type="text" placeholder="Search" onChange={handleChange} />;
 };
 
 Search.propTypes = {

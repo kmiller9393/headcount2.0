@@ -75,7 +75,7 @@ class App extends Component {
     return (
       <div>
         <header>
-          <h1>Kindergartners In Full Day Program</h1>
+          <h1>HeadCount 2.0</h1>
           <Search filterDistricts={this.filterDistricts} />
         </header>
         <div>
