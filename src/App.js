@@ -25,6 +25,7 @@ class App extends Component {
   };
 
   chooseCard = card => {
+    console.log(card);
     if (this.state.compareDistricts.length > 1) {
       return;
     }
@@ -75,7 +76,7 @@ class App extends Component {
     return (
       <div>
         <header>
-          <h1>HeadCount 2.0</h1>
+          {!this.state.compareDistricts.length && <h1>HeadCount 2.0</h1>}
           <Search filterDistricts={this.filterDistricts} />
         </header>
         <div>

@@ -10,7 +10,8 @@
 }
 
 body {
-  background-color: #080d0c;
+  background-image: url('images/headcount-background.jpg');
+  background-size: contain;
 }
 
 h1 {
@@ -19,6 +20,9 @@ h1 {
 }
 
 header {
+  font-family: 'Fredericka the Great', cursive;
+  letter-spacing: 0.1em;
+  margin-top: 1.6rem;
   text-align: center;
 }
 
@@ -28,6 +32,6 @@ input {
   font-size: 14px;
   height: 20px;
   justify-content: center;
-  margin: 0 auto 0 auto;
+  margin: 2rem auto 0 auto;
   width: 35%;
 }

@@ -6,7 +6,13 @@ const Search = ({ filterDistricts }) => {
     filterDistricts(event.target.value);
   };
 
-  return <input type="text" placeholder="Search" onChange={handleChange} />;
+  return (
+    <input
+      type="text"
+      placeholder="Search for a District"
+      onChange={handleChange}
+    />
+  );
 };
 
 Search.propTypes = {

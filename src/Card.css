@@ -2,7 +2,7 @@
   background-color: #f7f7f7;
   border-radius: 10px;
   box-shadow: inset 0 0 10px #000000;
-  height: 25rem;
+  height: 23rem;
   margin: 0.5rem;
   padding: 0 0.35rem 0 0.35rem;
   text-align: center;
@@ -19,13 +19,13 @@ h2 {
 }
 
 ul {
-  font-size: 0.8rem;
+  font-size: 1.1rem;
   margin: 0.25rem 0 0.25rem 0;
   padding: 0;
 }
 
 .low-data {
-  color: coral;
+  color: orange;
 }
 
 .high-data {

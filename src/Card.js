@@ -14,12 +14,12 @@ export default class Card extends Component {
   handleClick = () => {
     const selectStatus = this.state.selected;
     this.props.removeCard(this.props.location);
-    if (this.props.selected) {
-      return;
-    }
     this.setState({
       selected: !selectStatus
     });
+    if (this.props.selected) {
+      return;
+    }
     this.props.chooseCard(this.props);
   };
 

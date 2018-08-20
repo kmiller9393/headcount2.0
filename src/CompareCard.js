@@ -9,7 +9,7 @@ const CompareCard = ({
   DistrictTwoData
 }) => {
   return (
-    <div className="Card">
+    <div className="Card Chosen">
       <h2>
         {DistrictOne}: {DistrictOneData}
       </h2>

@@ -1,21 +1,21 @@
-import React from 'react';
-import CardContainer from '../../CardContainer';
-import Card from '../../Card';
-import { shallow } from 'enzyme';
+import React from 'react'
+import CardContainer from '../../CardContainer'
+import Card from '../../Card'
+import { shallow } from 'enzyme'
 
 describe('CardContainer', () => {
-  let wrapper;
-  let removeCardMock;
-  let chooseCardMock;
-  let compareCardsMock;
-  let filteredDistricts = [];
-  let compareDistricts = [];
-  let comparedAverages = {};
+  let wrapper
+  let removeCardMock
+  let chooseCardMock
+  let compareCardsMock
+  let filteredDistricts = []
+  let compareDistricts = []
+  let comparedAverages = {}
 
   beforeEach(() => {
-    removeCardMock = jest.fn();
-    chooseCardMock = jest.fn();
-    compareCardsMock = jest.fn();
+    removeCardMock = jest.fn()
+    chooseCardMock = jest.fn()
+    compareCardsMock = jest.fn()
     wrapper = shallow(
       <CardContainer
         removeCard={removeCardMock}
@@ -25,12 +25,12 @@ describe('CardContainer', () => {
         compareDistricts={compareDistricts}
         comparedAverages={comparedAverages}
       />
-    );
-  });
+    )
+  })
 
   it('should match the snapshot', () => {
-    expect(wrapper).toMatchSnapshot();
-  });
+    expect(wrapper).toMatchSnapshot()
+  })
 
   it('should render the districts and district data', () => {
     const card = [
@@ -44,12 +44,12 @@ describe('CardContainer', () => {
           2004: 0.302
         }
       }
-    ];
+    ]
     wrapper = shallow(
       <CardContainer filteredDistricts={card} compareDistricts={card} />
-    );
+    )
 
-    const expected = wrapper.find(Card).length;
-    expect(expected).toEqual(2);
-  });
-});
+    const expected = wrapper.find(Card).length
+    expect(expected).toEqual(2)
+  })
+})
