@@ -1,9 +1,9 @@
-import React from 'react'
-import CompareCard from '../../CompareCard'
-import { shallow } from 'enzyme'
+import React from 'react';
+import CompareCard from '../../CompareCard';
+import { shallow } from 'enzyme';
 
 describe('CompareCard', () => {
-  let wrapper
+  let wrapper;
   beforeEach(() => {
     wrapper = shallow(
       <CompareCard
@@ -13,10 +13,10 @@ describe('CompareCard', () => {
         DistrictTwo={'ADAMS COUNTY 14'}
         DistrictTwoData={0.709}
       />
-    )
-  })
+    );
+  });
 
   it('matches the snapshot', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-})
+    expect(wrapper).toMatchSnapshot();
+  });
+});

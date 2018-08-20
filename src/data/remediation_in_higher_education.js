@@ -3258,4 +3258,4 @@ module.exports =
   		'DataFormat': 'Percent',
   		'Data': 0.478
   	}
-  ]
+  ];

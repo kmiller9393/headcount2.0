@@ -14,6 +14,14 @@
   justify-content: space-evenly;
 }
 
+.top-district {
+  padding-bottom: 4.5rem;
+}
+
+.bottom-district {
+  padding-top: 4rem;
+}
+
 h2 {
   margin: 0.75rem 0 0.75rem 0;
 }

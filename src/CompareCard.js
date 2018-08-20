@@ -1,4 +1,5 @@
 import React from 'react';
+import './Card.css';
 import PropTypes from 'prop-types';
 
 const CompareCard = ({
@@ -9,12 +10,12 @@ const CompareCard = ({
   DistrictTwoData
 }) => {
   return (
-    <div className="Card Chosen">
-      <h2>
+    <div className="Card Chosen Compared">
+      <h2 className="top-district">
         {DistrictOne}: {DistrictOneData}
       </h2>
-      <h2>{comparison}</h2>
-      <h2>
+      <h2 className="comparison">compared: {comparison}</h2>
+      <h2 className="bottom-district">
         {DistrictTwo}: {DistrictTwoData}
       </h2>
     </div>
