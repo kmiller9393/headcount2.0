@@ -25,7 +25,6 @@ class App extends Component {
   };
 
   chooseCard = card => {
-    console.log(card);
     if (this.state.compareDistricts.length > 1) {
       return;
     }

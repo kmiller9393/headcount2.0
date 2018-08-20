@@ -12,11 +12,7 @@ export default class Card extends Component {
   }
 
   handleClick = () => {
-    const selectStatus = this.state.selected;
     this.props.removeCard(this.props.location);
-    this.setState({
-      selected: !selectStatus
-    });
     if (this.props.selected) {
       return;
     }
