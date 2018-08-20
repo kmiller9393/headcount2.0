@@ -7,7 +7,6 @@ describe('Search', () => {
   let handleMock;
 
   beforeEach(() => {
-    let event = { target: { value: 'a' } };
     handleMock = jest.fn();
     wrapper = shallow(<Search filterDistricts={handleMock} />);
   });

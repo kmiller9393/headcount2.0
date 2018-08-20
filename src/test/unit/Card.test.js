@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../../Card';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 describe('Card', () => {
   let wrapper;
@@ -72,11 +72,11 @@ describe('Card', () => {
     expect(chooseCardMock).toHaveBeenCalled();
   });
 
-  it('should have a class of Chosen when it has a compareDistricts property or a selected property', () => {
-    expect(wrapper.find('div').hasClass('Chosen')).toEqual(true);
+  it('should not have a class of Chosen when it has a compareDistricts property or a selected property', () => {
+    expect(wrapper.find('div').hasClass('Chosen')).toEqual(false);
   });
 
-  it('should not have a class of Chosen when it does not have a compareDistricts property or a selected property', () => {
+  it('should have a class of Chosen when it does not have a compareDistricts property or a selected property', () => {
     wrapper = shallow(
       <Card
         location="COLORADO"
@@ -87,7 +87,7 @@ describe('Card', () => {
         removeCard={removeCardMock}
       />
     );
-    expect(wrapper.find('div').hasClass('Chosen')).toEqual(false);
+    expect(wrapper.find('div').hasClass('Chosen')).toEqual(true);
   });
 
   it('should have the low-data class when its stat is below 0.5', () => {

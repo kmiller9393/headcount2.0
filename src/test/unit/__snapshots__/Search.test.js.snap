@@ -19,7 +19,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "onChange": [Function],
-      "placeholder": "Search",
+      "placeholder": "Search for a District",
       "type": "text",
     },
     "ref": null,
@@ -33,7 +33,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "onChange": [Function],
-        "placeholder": "Search",
+        "placeholder": "Search for a District",
         "type": "text",
       },
       "ref": null,

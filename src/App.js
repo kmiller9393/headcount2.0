@@ -20,7 +20,8 @@ class App extends Component {
     const districts = new DistrictRepository(kinderdata);
     const newDistricts = districts.findAllMatches(input);
     this.setState({
-      filteredDistricts: newDistricts
+      filteredDistricts: newDistricts,
+      compareDistricts: []
     });
   };
 

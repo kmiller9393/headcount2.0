@@ -23,21 +23,28 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h2>
+        <h2
+          className="top-district"
+>
           COLORADO
           : 
           0.53
 </h2>,
-        <h2>
+        <h2
+          className="comparison"
+>
+          compared: 
           0.748
 </h2>,
-        <h2>
+        <h2
+          className="bottom-district"
+>
           ADAMS COUNTY 14
           : 
           0.709
 </h2>,
       ],
-      "className": "Card",
+      "className": "Card Chosen Compared",
     },
     "ref": null,
     "rendered": Array [
@@ -51,6 +58,7 @@ ShallowWrapper {
             ": ",
             0.53,
           ],
+          "className": "top-district",
         },
         "ref": null,
         "rendered": Array [
@@ -65,10 +73,17 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": 0.748,
+          "children": Array [
+            "compared: ",
+            0.748,
+          ],
+          "className": "comparison",
         },
         "ref": null,
-        "rendered": 0.748,
+        "rendered": Array [
+          "compared: ",
+          0.748,
+        ],
         "type": "h2",
       },
       Object {
@@ -81,6 +96,7 @@ ShallowWrapper {
             ": ",
             0.709,
           ],
+          "className": "bottom-district",
         },
         "ref": null,
         "rendered": Array [
@@ -100,21 +116,28 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h2>
+          <h2
+            className="top-district"
+>
             COLORADO
             : 
             0.53
 </h2>,
-          <h2>
+          <h2
+            className="comparison"
+>
+            compared: 
             0.748
 </h2>,
-          <h2>
+          <h2
+            className="bottom-district"
+>
             ADAMS COUNTY 14
             : 
             0.709
 </h2>,
         ],
-        "className": "Card",
+        "className": "Card Chosen Compared",
       },
       "ref": null,
       "rendered": Array [
@@ -128,6 +151,7 @@ ShallowWrapper {
               ": ",
               0.53,
             ],
+            "className": "top-district",
           },
           "ref": null,
           "rendered": Array [
@@ -142,10 +166,17 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": 0.748,
+            "children": Array [
+              "compared: ",
+              0.748,
+            ],
+            "className": "comparison",
           },
           "ref": null,
-          "rendered": 0.748,
+          "rendered": Array [
+            "compared: ",
+            0.748,
+          ],
           "type": "h2",
         },
         Object {
@@ -158,6 +189,7 @@ ShallowWrapper {
               ": ",
               0.709,
             ],
+            "className": "bottom-district",
           },
           "ref": null,
           "rendered": Array [

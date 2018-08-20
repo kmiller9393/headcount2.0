@@ -12,7 +12,9 @@ export default class Card extends Component {
   }
 
   handleClick = () => {
+    const selectedStatus = this.state.selected;
     this.props.removeCard(this.props.location);
+    this.setState({ selected: !selectedStatus });
     if (this.props.selected) {
       return;
     }
@@ -23,7 +25,7 @@ export default class Card extends Component {
     return (
       <div
         className={
-          this.props.compareDistricts || this.state.selected
+          !this.props.compareDistricts || this.state.selected
             ? 'Chosen Card'
             : 'Card'
         }

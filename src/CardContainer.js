@@ -21,6 +21,7 @@ const CardContainer = ({
         key={index}
         chooseCard={chooseCard}
         compareCards={compareCards}
+        compareDistricts={compareDistricts}
         removeCard={removeCard}
       />
     );
@@ -34,7 +35,6 @@ const CardContainer = ({
         key={index}
         chooseCard={chooseCard}
         compareCards={compareCards}
-        compareDistricts={compareDistricts}
         selected
         removeCard={removeCard}
       />

@@ -38,7 +38,9 @@ describe('CardContainer', () => {
         location: 'COLORADO',
         stats: {
           2004: 0.24
-        },
+        }
+      },
+      {
         location: 'ACADEMY 20',
         stats: {
           2004: 0.302
