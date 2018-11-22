@@ -1,15 +1,8 @@
 # HeadCount 2.0
 
-HeadCount 2.0 is a project designed to challenge your skills at manipulating data and creating small, reusable React components.
+By [Kurt Miller](https://github.com/kmiller9393)
 
-This application was built using the `create-react-app` boilerplate.
-
-## Project Goals
-
-- Separate application logic into small, testable functions.
-- Create modular, reusable React components.
-- Use propTypes to validate props passed to each component.
-- Write meaningful, comprehensive unit and integration tests.
+HeadCount 2.0 is an application that allows users to view and compare educational statistics of different school districts within the state of Colorado. This application was build with React.js. Jest and Enzyme were utilized for testing.
 
 ## Landing Page:
 
